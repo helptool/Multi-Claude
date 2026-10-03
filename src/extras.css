@@ -1,0 +1,206 @@
+/* Multi Claude additions – imported by renderer.js after index.css */
+
+#main-content { position: relative; }
+
+/* sign icon (✧ ✵ ✯ …) shown in the tab bar and in the sidebar */
+.tab-sign {
+  flex-shrink: 0;
+  margin-right: 6px;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--text-primary);
+  pointer-events: none;
+}
+.tab-sign:empty { display: none; }
+.sidebar-tab .tab-sign { margin-right: 8px; }
+
+/* pinned tabs: narrower, no close button (use the context menu), truncated title */
+.tab-frame.pinned { min-width: 0; }
+.tab-frame.pinned .close-btn { display: none; }
+.tab-frame.pinned .tab { padding-right: 6px; }
+.tab-frame.pinned .tab .title { text-overflow: ellipsis; }
+.sidebar-tab.pinned .sidebar-name { font-weight: 600; }
+
+/* ---- overlays (quick switcher, settings, …) ---- */
+.overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  background: rgba(0, 0, 0, 0.45);
+  -webkit-app-region: no-drag;
+}
+.overlay-backdrop[hidden] { display: none; }
+
+.overlay-panel {
+  width: min(560px, 92vw);
+  max-height: 72vh;
+  overflow: auto;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  font-size: 13px;
+}
+
+.switcher-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  outline: none;
+}
+.switcher-list { list-style: none; max-height: 50vh; overflow-y: auto; padding: 6px; }
+.switcher-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.switcher-item.selected { background: var(--bg-hover); }
+.switcher-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: var(--border-color); }
+.switcher-sign { width: 16px; text-align: center; flex-shrink: 0; }
+.switcher-name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.switcher-meta { color: var(--text-secondary); font-size: 11px; flex-shrink: 0; }
+.switcher-empty { padding: 14px 16px; color: var(--text-secondary); }
+
+/* ---- settings modal ---- */
+#btn-settings { font-size: 16px; }
+
+.settings-panel { padding: 0; }
+.settings-header { padding: 16px 20px 8px; font-size: 16px; font-weight: 600; }
+.settings-body { padding: 4px 20px 8px; }
+.settings-row { display: flex; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border-color); }
+.settings-row:last-child { border-bottom: none; }
+.settings-row .settings-text { flex: 1; }
+.settings-hint { display: block; color: var(--text-secondary); font-size: 11px; margin-top: 2px; }
+.settings-row input[type="checkbox"] { width: 16px; height: 16px; }
+.settings-row input[type="text"],
+.settings-row input[type="number"],
+.settings-row input[type="password"],
+.settings-row select {
+  min-width: 150px;
+  padding: 5px 8px;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+}
+.settings-section { padding: 10px 0 4px; border-top: 1px solid var(--border-color); }
+.settings-section h3 { font-size: 13px; margin-bottom: 6px; }
+.settings-footer { display: flex; align-items: center; gap: 8px; padding: 12px 20px 16px; }
+.settings-message { flex: 1; font-size: 12px; color: var(--text-secondary); }
+.settings-message.error { color: #f87171; }
+.btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--bg-active);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:hover { background: var(--bg-hover); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn.primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+
+/* ---- find bar (sits exactly where main reserves FIND_BAR_HEIGHT) ---- */
+.find-bar {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 36px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  -webkit-app-region: no-drag;
+}
+.find-bar[hidden] { display: none; }
+.find-input {
+  width: 260px;
+  padding: 4px 8px;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+}
+.find-count { min-width: 64px; font-size: 12px; color: var(--text-secondary); }
+.find-btn {
+  width: 26px;
+  height: 26px;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.find-btn:hover { background: var(--bg-hover); }
+
+/* ---- hibernated tabs ---- */
+.tab-container.hibernated .tab .title,
+.sidebar-tab.hibernated .sidebar-name { opacity: 0.55; font-style: italic; }
+
+/* ---- split view ---- */
+#split-divider {
+  position: fixed;
+  bottom: 0;
+  z-index: 500;
+  background: var(--border-color);
+  cursor: col-resize;
+  -webkit-app-region: no-drag;
+  touch-action: none;
+}
+#split-divider[hidden] { display: none; }
+#split-divider:hover,
+#split-divider.dragging { background: #8ab4f8; }
+.tab-container.split-pane .tab { box-shadow: inset 0 -2px 0 #8ab4f8; }
+
+/* ---- app lock ---- */
+.lock-screen {
+  position: fixed;
+  top: 42px;           /* keep the minimize / maximize / close buttons usable */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  -webkit-app-region: no-drag;
+}
+.lock-screen[hidden] { display: none; }
+.lock-box { display: flex; flex-direction: column; gap: 12px; width: 280px; text-align: center; }
+.lock-box h2 { font-size: 18px; font-weight: 600; }
+.lock-box input {
+  padding: 10px 12px;
+  font-size: 18px;
+  letter-spacing: 6px;
+  text-align: center;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+}
+.lock-message { min-height: 18px; font-size: 12px; color: #f87171; }
+.settings-pin-fields { display: flex; flex-direction: column; gap: 6px; margin: 8px 0; }
+.settings-pin-fields input { width: 180px; }
+.settings-pin-buttons { display: flex; gap: 8px; align-items: center; }

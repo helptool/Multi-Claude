@@ -1,0 +1,38 @@
+{
+  "name": "multi-claude",
+  "productName": "Multi Claude",
+  "version": "1.1.0",
+  "description": "Desktop app to manage multiple Claude accounts side by side with isolated sessions",
+  "main": ".vite/build/main.cjs",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "keywords": [
+    "claude",
+    "anthropic",
+    "multi-account",
+    "electron",
+    "desktop"
+  ],
+  "author": "0xda203",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^8.0.1",
+    "@electron-forge/maker-deb": "^8.0.1",
+    "@electron-forge/maker-rpm": "^8.0.1",
+    "@electron-forge/maker-squirrel": "^8.0.1",
+    "@electron-forge/maker-zip": "^8.0.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^8.0.1",
+    "@electron-forge/plugin-fuses": "^8.0.1",
+    "@electron-forge/plugin-vite": "^8.0.1",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^44.5.1",
+    "vite": "^8.3.2"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
+  }
+}
