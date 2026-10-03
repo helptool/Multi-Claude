@@ -1,64 +1,85 @@
-# Multi WhatsApp
+# Multi-Claude
 
-A desktop application to manage multiple WhatsApp accounts simultaneously in a single window with isolated sessions.
+**A desktop application for managing and using multiple Claude accounts simultaneously in a single window, with isolated sessions.**
 
 <p align="center">
-  <img src="Screenshot_1.png" alt="Multi WhatsApp App Preview" width="800" />
+  <img src="Screenshot_1.png" alt="Multi-Claude Desktop App Preview" width="800" />
 </p>
 
-## Features
+---
 
-- **Multiple Accounts**: Run multiple WhatsApp Web instances with isolated sessions
-- **Tab Management**: Chrome-like tabs with drag-and-drop reordering
-- **Session Persistence**: Tabs and login sessions persist across restarts
-- **Custom Tab Names**: Double-click or right-click to rename tabs
-- **Tab Colors**: Right-click to assign custom colors to tabs for easy identification
-- **Native Notifications**: Uses WhatsApp Web's built-in notifications
-- **Dark/Light Mode**: Follows system theme
-- **Keyboard Shortcuts**: `Ctrl+Tab` / `Ctrl+Shift+Tab` to switch tabs / `Ctrl+'` to open/close sidebar
-- **Context Menu**: Right-click for Rename, Refresh, Mute/Unmute, Change Color, Clear Session, Close
-- **Zoom Controls**: `Ctrl +` / `Ctrl -` / `Ctrl 0` to zoom in/out/reset the active tab
-- **Close Confirmation**: Optional confirmation dialog when closing tabs to prevent accidental session loss
+## ⟡ Features
 
-## Installation
+* **▣ Multiple Claude Accounts** — Use multiple Claude accounts from a single application.
+* **◈ Isolated Sessions** — Each account maintains its own independent session and authentication state.
+* **▤ Multi-Tab Interface** — Manage multiple Claude sessions through a convenient tab-based interface.
+* **◫ Session Persistence** — Account sessions remain available after restarting the application.
+* **✦ Custom Tab Names** — Rename tabs to easily identify different Claude accounts.
+* **◉ Tab Customization** — Organize accounts with customizable tab appearance.
+* **⇄ Quick Account Switching** — Switch between Claude accounts without opening separate browser windows.
+* **▣ Desktop Application** — A dedicated desktop experience instead of managing multiple browser profiles manually.
+
+---
+
+## ⌘ Getting Started
+
+### ⟐ Requirements
+
+* **Windows**
+* **Node.js**
+* **npm**
+
+### ⟐ Installation
+
+Clone the repository:
 
 ```bash
-git clone https://github.com/0xda203/multi-whatsapp.git
-cd multi-whatsapp
+git clone https://github.com/helptool/Multi-Claude.git
+cd Multi-Claude
+```
+
+Install dependencies:
+
+```bash
 npm install
+```
+
+Start the application:
+
+```bash
 npm start
 ```
 
-## Build
+---
+
+## ⚒ Build
+
+Create a production build with:
 
 ```bash
 npm run make
 ```
 
-Output: `out/make/squirrel.windows/x64/`
+The generated build files will be available inside the project's `out` directory.
 
-## Usage
+---
 
-1. Launch the app
-2. Scan QR code with your WhatsApp
-3. Click `+` to add more accounts
-4. Enable notifications: WhatsApp menu → Settings → Notifications → Enable desktop notifications
+## ◇ Use Case
 
-## Keyboard Shortcuts
+Multi-Claude is designed for users who need to work with **multiple Claude accounts** while keeping their sessions separated and easily accessible.
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl+Tab` | Next tab |
-| `Ctrl+Shift+Tab` | Previous tab |
-| `Ctrl+'` | Open/Close sidebar |
-| `Ctrl +` | Zoom In (Active Tab) |
-| `Ctrl -` | Zoom Out (Active Tab) |
+Instead of maintaining multiple browser windows or profiles, Multi-Claude provides a **single desktop workspace** for managing multiple Claude sessions.
 
-## Limitations
+---
 
-- Requires internet connection
-- Phone must stay connected for WhatsApp Web to work
+## ⓘ Disclaimer
 
-## License
+Multi-Claude is an independent third-party project and is **not affiliated with, endorsed by, or sponsored by Anthropic**.
 
-MIT
+Claude and Anthropic are trademarks of their respective owners.
+
+---
+
+## ◉ License
+
+This project is licensed under the **MIT License**.
